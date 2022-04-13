@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins: 200,300,400,500,600,700,800,9000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    opacity: 100%;
+}
+
+h1 {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    box-shadow: 5px 25px 75px rgba(0, 0, 0, 0.75),
+        10px 10px 70px rgba(0, 0, 0, 0.25),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+.social {
+    background-color: #000000;
+    text-align: right;
+}
+
+.social a {
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+marquee {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* analog clock */
+.homeclock {
+    margin: auto;
+    position: relative;
+    background: #2f363e;
+    /* min-height: 500px; */
+    border-radius: 20px;
+    border-top-left-radius: 225px;
+    border-top-right-radius: 225px;
+    box-shadow: 5px 25px 75px rgba(0, 0, 0, 0.75),
+        10px 10px 70px rgba(0, 0, 0, 0.25),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clock {
+    position: relative;
+    width: 340px;
+    height: 330px;
+    background: #2f363e;
+    border-radius: 50%;
+    box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.clock:before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+.clock span {
+    position: absolute;
+    inset: 20px;
+    color: #fff;
+    text-align: center;
+    transform: rotate(calc(30deg*var(--i)));
+}
+
+.clock span b {
+    font-size: 2em;
+    opacity: 0.7;
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(calc(-30deg*var(--i)));
+}
+
+.circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+}
+
+.circle i {
+    position: absolute;
+    width: 6px;
+    height: 50%;
+    background: var(--clr);
+    opacity: 0.5;
+    transform-origin: bottom;
+    transform: scaleY(0.5);
+}
+
+.circle:nth-child(1) i {
+    width: 2px;
+}
+
+.circle:nth-child(2) i {
+    width: 6px;
+}
+
+.circle2 {
+    width: 240px;
+    height: 240px;
+    z-index: 9;
+}
+
+.circle3 {
+    width: 180px;
+    height: 180px;
+    z-index: 8;
+}
+
+.circle::before {
+    content: '';
+    position: absolute;
+    top: -8.5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--clr);
+    box-shadow: 0 0 20px var(--clr),
+        0 0 60px var(--clr);
+}
+
+/* digital clock */
+#time {
+    margin-bottom: 40px;
+    display: flex;
+    padding: 10px 20px;
+    font-size: 2em;
+    font-weight: 600;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+#time div {
+    color: var(--clr);
+    position: relative;
+    width: 60px;
+    text-align: center;
+    font-weight: 500;
+}
+
+#time div:nth-child(1)::after,
+#time div:nth-child(2)::after {
+    content: ':';
+    position: absolute;
+    right: -4px;
+}
+
+#time div:last-child {
+    font-size: 0.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#time div:nth-child(2)::after {
+    animation: animate 1s steps(1) infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.homequote {
+    color: #ffffff;
+    margin: auto 5%;
+}
+
+.wrapper {
+    width: 370px;
+    padding: 30px;
+    border-radius: 7px;
+    background: #fff;
+    margin: 0 20px;
+}
+
+.wrapper header {
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.wrapper form {
+    margin: 40px 0 20px 0;
+}
+
+.wrapper form :where(input, select, button) {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+.wrapper form p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.wrapper form input {
+    height: 50px;
+    border: 1px solid #999;
+    padding: 0 15px;
+    font-size: 17px;
+}
+
+.wrapperform input:focus {
+    padding: 0 14px;
+    border: 2px solid #6751fe;
+}
+
+.wrapper form .drop-list {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drop-list .select-box {
+    display: flex;
+    width: 115px;
+    height: 45px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #999;
+}
+
+.select-box select {
+    width: auto;
+    font-size: 16px;
+}
+
+.select-box select::-webkit-scrollbar {
+    width: 8px;
+}
+
+.select-box select::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.select-box select::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+    border-right: 2px solid #fff;
+}
+
+.drop-list .icon {
+    font-size: 22px;
+    margin-top: 30px;
+}
+
+form .exchange-rate {
+    font-size: 17px;
+    margin: 20px 0 30px;
+}
+
+.wrapper form button {
+    height: 52px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    background: #000000;
+    border-radius: 20px;
+}
+
+.stockimg img {
+    height: 370px;
+    width: 370px;
+    border-radius: 50%;
+    padding: 10px;
+    opacity: 100%;
+    margin-top: 20%;
+    border: 6px solid whitesmoke;
+    box-shadow: 5px 25px 75px rgba(0, 0, 0, 0.75),
+        10px 10px 70px rgba(0, 0, 0, 0.25),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+.followlink a {
+    font-size: 50px;
+    padding: 5px;
+}
+
+/* calcultor */
+.bg-modal,
+.bg-modal1,
+.bg-modal2,
+.bg-modal3,
+.bg-modal4,
+.bg-modal5 {
+    width: 90%;
+    height: fit-content;
+    position: absolute;
+    display: none;
+    margin: 0 auto;
+    top: 5%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.close,
+.close1,
+.close2,
+.close3,
+.close4,
+.close5 {
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    font-size: 30px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    color: #000;
+}
+
+.modal-content {
+    max-width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 1;
+    border-radius: 5px;
+    align-items: center;
+    padding: 5%;
+    box-shadow: 5px 25px 75px rgba(0, 0, 0, 0.75),
+        10px 10px 70px rgba(0, 0, 0, 0.25),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+.cards {
+    align-items: center;
+    background-color: #000;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #28a745;
+    border-radius: 10%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    margin: 10% 30% 0 30%;
+    width: 420px;
+}
+
+form #uerror {
+    color: #c70000;
+    text-align: center;
+    display: none;
+}
+
+footer {
+    background-color: #000000;
+    height: fit-content;
+    color: #ffffff;
+    padding-bottom: 10px;
+    margin: 10 0 0 10;
+    font-size: small;
+}
+
+footer ul li a,
+.email a, 
+.contacticon a {
+    color: #fff;
+}
+
+footer ul li a:hover,
+.email a:hover,
+.contacticon a:hover {
+    color: gold;
+    text-decoration: none;
+}
+
+.aboutimg img {
+    height: 200px;
+    width: 200px;
+    padding: 6px;
+    opacity: 100%;
+    border-radius: 50%;
+    border: 3px solid whitesmoke;
+    box-shadow: 5px 25px 75px rgba(0, 0, 0, 0.75),
+        10px 10px 70px rgba(0, 0, 0, 0.25),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+        inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+        inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+.contacticon a{
+    font-size:xx-large;
+}
